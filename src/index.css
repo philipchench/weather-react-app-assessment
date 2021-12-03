@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tahoma';
+  color: rgb(107, 107, 107);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+
+.app{
+  height: 100%;
+}
+
+.app.warm-day{
+  background-color: rgb(216, 226, 195);
+}
+.app.warm-night{
+  background-color: rgb(158, 155, 133);;
+}
+.app.cold-day{
+  background-color: rgb(191, 221, 245);
+}
+.app.cold-night{
+  background-color: rgb(132, 152, 173);
+}
+
+.content{
+  height: 100%;
+}
+
+.navbar{
+  margin: 10px;
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+.navbar label{
+  margin-right: 10px; 
+  font-weight: bold;
+}
+.navbar a{
+  margin-right: 10px;
+  font-size: 1rem;
+}
+.search input{
+  margin-right: 10px;
+}
+
+.weekForecastBox{
+  margin: 5rem 10rem;
+  font-size: 0.75rem;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
+}
+.weekForecastBox ul{
+  list-style-type: none;
+}

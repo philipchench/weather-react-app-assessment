@@ -57,11 +57,12 @@ function App() {
 
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 
-    ((isDay) ? 'warm-day' : 'warm-night') : 
-    ((isDay) ? 'cold-day' : 'cold-night')) : 'app'}>
+    ((isDay) ? 'app warm-day' : 'app warm-night') : 
+    ((isDay) ? 'app cold-day' : 'app cold-night')) : 'app'}>
+      <div className='content'>
       <nav className = "navbar">
         <label>React Weather App</label>
-        <a href="https://philipchench.github.io/" target="_blank" >My website</a>
+        <a href="https://philipchench.github.io/" target="_blank">My website</a>
       </nav>
       
       <form className = "search" onSubmit={onSubmit}>
@@ -100,6 +101,8 @@ function App() {
         ) : (
           ''
         )}
+
+      </div>
 
     </div>
   );
