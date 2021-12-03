@@ -1,16 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Tahoma';
-  color: rgb(107, 107, 107);
+  color: rgb(41, 41, 41);
+  background-color: rgb(223, 221, 215);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-image: url('bg/bgwarmday.jpg');
 }
 
 code {
@@ -21,22 +17,8 @@ code {
 .app{
   height: 100%;
 }
-
-.app.warm-day{
-  background-color: rgb(216, 226, 195);
-}
-.app.warm-night{
-  background-color: rgb(158, 155, 133);;
-}
-.app.cold-day{
-  background-color: rgb(191, 221, 245);
-}
-.app.cold-night{
-  background-color: rgb(132, 152, 173);
-}
-
-.content{
-  height: 100%;
+.app.night{
+  color: rgb(255, 255, 255);
 }
 
 .navbar{
@@ -48,20 +30,41 @@ code {
   margin-right: 10px; 
   font-weight: bold;
 }
-.navbar a{
-  margin-right: 10px;
-  font-size: 1rem;
-}
 .search input{
   margin-right: 10px;
 }
 
+.allWeatherBox{
+  display: flex;
+  justify-content: center;
+}
+
+.currWeatherBox{
+  margin: 2rem;
+}
+.location{
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.currTemp{
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
 .weekForecastBox{
-  margin: 5rem 10rem;
+  margin: 2rem 2rem;
   font-size: 0.75rem;
-  background-color: #fff;
-  background-color: rgba(255,255,255,0.5);
 }
 .weekForecastBox ul{
   list-style-type: none;
+}
+.weekForecastItem label{
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  .allWeatherBox{
+    display: block;
+  }
 }

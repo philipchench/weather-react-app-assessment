@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const apiKey = "d918fb09ac8966283f0131e75067b145"
@@ -50,19 +50,30 @@ function App() {
     }catch(err){
       alert("Can't find city or partial data missing.")
     }
+  }
 
-
+  if(typeof weather.main != "undefined"){
+    if(weather.main.temp > 16){
+      if(isDay){
+        document.body.style.backgroundImage = "url('bg/bgwarmday.jpg')";
+      }else{
+        document.body.style.backgroundImage = "url('bg/bgwarmnight.jpg')";
+      }
+    }else{
+      if(isDay){
+        document.body.style.backgroundImage = "url('bg/bgcoldday.jpg')";
+      }else{
+        document.body.style.backgroundImage = "url('bg/bgcoldnight.jpg')";
+      }
+    }
   }
 
 
   return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 
-    ((isDay) ? 'app warm-day' : 'app warm-night') : 
-    ((isDay) ? 'app cold-day' : 'app cold-night')) : 'app'}>
+    <div className={(typeof weather.main != "undefined" && !isDay) ? 'app night' : 'app'}>
       <div className='content'>
       <nav className = "navbar">
         <label>React Weather App</label>
-        <a href="https://philipchench.github.io/" target="_blank">My website</a>
       </nav>
       
       <form className = "search" onSubmit={onSubmit}>
@@ -76,15 +87,16 @@ function App() {
         </form>
 
         {(typeof weather.main != "undefined") ? (
-        <div>
+        <div className="allWeatherBox">
           <div className="currWeatherBox">
             <div className="location">{weather.name} {weather.sys.country}</div>
-            <label >Temperature</label>
             <div className="currTemp">
               {Math.round(weather.main.temp)}°c
             </div>
-            <label >Current Weather</label>
-            <div className="currWeather">{weather.weather[0].main}</div>
+            <label >Forecasted Weather</label>
+            <div className="currWeather">
+              {weather.weather[0].main}
+            </div>
             <label >Forecasted Weather</label>
             <div className="shortForecast">{forecast}</div>
           </div>
