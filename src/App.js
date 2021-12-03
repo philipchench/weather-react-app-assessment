@@ -52,7 +52,7 @@ function App() {
     }
   }
 
-  if(typeof weather.main != "undefined"){
+  if(typeof weather.main != "undefined"){//update background img
     if(weather.main.temp > 16){
       if(isDay){
         document.body.style.backgroundImage = "url('bg/bgwarmday.jpg')";
@@ -70,14 +70,11 @@ function App() {
 
 
   return (
-    <div className={(typeof weather.main != "undefined" && !isDay) ? 'app night' : 'app'}>
+    <div className='app'>
       <div className='content'>
-      <nav className = "navbar">
-        <label>React Weather App</label>
-      </nav>
-      
       <form className = "search" onSubmit={onSubmit}>
             <input
+              className = "searchArea"
               type='text'
               placeholder='Enter city...'
               value={city}
@@ -87,18 +84,19 @@ function App() {
         </form>
 
         {(typeof weather.main != "undefined") ? (
-        <div className="allWeatherBox">
+        <div>
+          <div className="allWeatherBox">
           <div className="currWeatherBox">
             <div className="location">{weather.name} {weather.sys.country}</div>
             <div className="currTemp">
               {Math.round(weather.main.temp)}°c
             </div>
-            <label >Forecasted Weather</label>
-            <div className="currWeather">
+            <label >Current Weather</label>
+            <div className="description">
               {weather.weather[0].main}
             </div>
             <label >Forecasted Weather</label>
-            <div className="shortForecast">{forecast}</div>
+            <div className="description">{forecast}</div>
           </div>
           <div className="weekForecastBox">
             <ul>
@@ -110,13 +108,18 @@ function App() {
             </ul>
           </div>
         </div>
+        <div className="bottom">
+          <span>Cheng-Hsiang (Philip) Chen, </span>
+          <a href="https://philipchench.github.io/" target="_blank" style={{color: "white"}}>my website</a>
+        </div>
+        </div>
+        
         ) : (
           ''
         )}
 
       </div>
-
-    </div>
+      </div>
   );
 }
 

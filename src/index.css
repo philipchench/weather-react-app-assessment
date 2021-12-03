@@ -1,37 +1,35 @@
 body {
   font-family: 'Tahoma';
-  color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px rgba(27, 27, 27, 0.5);
   background-color: rgb(223, 221, 215);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-image: url('bg/bgwarmday.jpg');
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+  background-image: url('bghome.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 .app{
   height: 100%;
 }
-.app.night{
-  color: rgb(255, 255, 255);
-}
 
-.navbar{
-  margin: 10px;
-  margin-top: 0;
-  font-size: 1.4rem;
+.search{
+  margin: 2rem;
 }
-.navbar label{
-  margin-right: 10px; 
-  font-weight: bold;
+.searchArea{
+  width: 200px;
 }
 .search input{
+  border: none;
+  outline: none;
+  padding: 5px;
   margin-right: 10px;
+  height: 25px;
+  border-radius: 0.5rem;
 }
 
 .allWeatherBox{
@@ -42,16 +40,26 @@ code {
 .currWeatherBox{
   margin: 2rem;
 }
+.currWeatherBox label{
+  font-size: 1.3rem;
+}
+.description{
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 20px 0px;
+}
 .location{
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 .currTemp{
   font-size: 4rem;
-  margin-bottom: 20px;
+  margin: 50px 0px;
 }
 .weekForecastBox{
   margin: 2rem 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
   font-size: 0.75rem;
 }
 .weekForecastBox ul{
@@ -60,6 +68,11 @@ code {
 .weekForecastItem label{
   font-weight: bold;
   font-size: 1rem;
+}
+
+.bottom{
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 
